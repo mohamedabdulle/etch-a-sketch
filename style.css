@@ -1,0 +1,88 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  background-color: rgb(177, 2, 14);
+  color: white;
+  font-weight: bold;
+}
+
+#title {
+  font-size: 100px;
+  font-family: "brush script mt", cursive;
+}
+#container {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  gap: 30px;
+}
+
+#settings {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  background-color: rgb(37, 66, 37);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  padding: 20px;
+  background-color: rgb(78, 1, 6);
+}
+
+#settings h2 {
+  align-self: center;
+}
+
+#settings div {
+  align-self: start;
+}
+
+#settings input {
+  margin-left: 10px;
+}
+
+#settings div {
+  displaY: flex;
+  align-items: center;
+}
+
+#settings button {
+  background-color: white;
+  font-weight: bold;
+  padding: 5px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+}
+
+#sketch {
+  height: 600px;
+  width: 600px;
+  background-color: white;
+}
+
+#slider {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(78, 1, 6);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  padding: 20px 20px; 
+  font-size: 18px;
+}
+
+#range {
+  width: 480px;
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Etch-A-Sketch</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/x-icon" href="/img/favicon.webp">
+</head>
+
+<body>
+  <div id="title">Etch-a-Sketch</div>
+  <div id="container">
+    <div id="settings">
+      <h2>Settings</h2>
+      <div>
+        <label for="etch-color">Etching:</label>
+        <input id="etch-color" type="color">
+      </div>
+      <div>
+        <label for="template-color">Canvas:</label>
+        <input id="template-color" type="color" value="#ffffff">
+      </div>
+      <button id="reset-canvas">Reset Canvas</button>
+    </div>
+    <div id="cont-sketch">
+      <div id="slider">
+        <input id="range" type="range" min="1" max="100" value="16">
+        <span id="grid">16 X 16</span>
+      </div>
+      <div id="sketch"></div>
+    </div>
+  </div>
+</body>
+</html>
