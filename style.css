@@ -21,18 +21,20 @@ body {
   font-size: 100px;
   font-family: "brush script mt", cursive;
 }
+
 #container {
   display: flex;
   justify-content: center;
   align-items: start;
   gap: 30px;
+  flex-wrap: wrap;
 }
 
 #settings {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: stretch;
   gap: 20px;
   background-color: rgb(37, 66, 37);
   border-top-left-radius: 10px;
@@ -62,6 +64,10 @@ body {
   border-radius: 5px;
 }
 
+#settings button:hover {
+  opacity: 80%;
+}
+
 #sketch {
   height: 600px;
   width: 600px;
@@ -80,6 +86,15 @@ body {
   font-size: 18px;
 }
 
+#container-sketch {
+  flex: 0 1 auto;
+}
+
 #range {
   width: 480px;
+}
+
+#sketch div { 
+  aspect-ratio: 1 / 1;
+  width: calc(100%/16);
 }

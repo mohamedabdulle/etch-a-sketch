@@ -9,10 +9,11 @@
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/x-icon" href="/img/favicon.webp">
   <script defer src="script.js"></script>
+  <style></style>
 </head>
 
 <body>
-  <div id="title">Etch-a-Sketch</div>
+  <div id="title">Etch<span>-a-</span>Sketch</div>
   <div id="container">
     <div id="settings">
       <h2>Settings</h2>
@@ -24,12 +25,13 @@
         <label for="canvas-color">Canvas:</label>
         <input id="canvas-color" type="color" value="#ffffff">
       </div>
+      <button id="eraser">Eraser</button>
       <button id="reset-canvas">Reset Canvas</button>
     </div>
     <div id="container-sketch">
       <div id="slider">
-        <input id="range" type="range" min="1" max="100" value="16">
-        <span id="grid" data-grid="16">16 X 16</span>
+        <input id="range" type="range" min="1" max="64" value="16">
+        <span id="grid" data-grid=""></span>
       </div>
       <div id="sketch">
       </div>
