@@ -56,14 +56,9 @@ slider.onkeyup = function() { setGridProperties(this.value); };
 
 // Settings
 
-canvasButtonColor.onclick = function() { 
-  canvasColor = this.value;
-  sketchColor = canvasColor;
-}
-
 canvasButtonColor.oninput = function() { 
   canvasColor = this.value;
-  sketchColor = canvasColor;
+  sketchCanvas.style.backgroundColor = canvasColor;
 }
 
 sketchButtonColor.onclick = function() { sketchColor = this.value; }

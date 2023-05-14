@@ -12,31 +12,38 @@
 </head>
 
 <body>
-  <div id="title">Etch-a-Sketch</div>
-  <div id="container">
-    <div id="settings">
-      <div id="header">
-        <h2>Settings</h2>
-        <hr>
+  <div id="body-container">
+    <div id="title">Etch-a-Sketch</div>
+    <div id="container">
+      <div id="settings">
+        <div id="header">
+          <h2>Settings</h2>
+          <hr>
+        </div>
+        <div>
+          <label for="sketch-color">Etching:</label>
+          <input id="sketch-color" type="color">
+        </div>
+        <div>
+          <label for="canvas-color">Canvas:</label>
+          <input id="canvas-color" type="color" value="#ffffff">
+        </div>
+        <button id="eraser">Eraser</button>
+        <button id="reset-canvas">Reset Canvas</button>
       </div>
-      <div>
-        <label for="sketch-color">Etching:</label>
-        <input id="sketch-color" type="color">
+      <div id="container-sketch">
+        <div id="slider">
+          <input id="range" type="range" min="1" max="64" value="16">
+          <span id="grid" data-grid=""></span>
+        </div>
+        <div id="sketch">
+        </div>
       </div>
-      <div>
-        <label for="canvas-color">Canvas:</label>
-        <input id="canvas-color" type="color" value="#ffffff">
-      </div>
-      <button id="eraser">Eraser</button>
-      <button id="reset-canvas">Reset Canvas</button>
     </div>
-    <div id="container-sketch">
-      <div id="slider">
-        <input id="range" type="range" min="1" max="64" value="16">
-        <span id="grid" data-grid=""></span>
-      </div>
-      <div id="sketch">
-      </div>
+  </div>
+  <div id="footer-container">
+    <div id="footer">
+      <a href="https://github.com/mohamedabdulle/etch-a-sketch"><img src="img/github.gif" alt="GitHub Link">Mohamed Abdulle © 2023</a>
     </div>
   </div>
 </body>
