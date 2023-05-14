@@ -1,4 +1,7 @@
-const initialGrid = 16;
+const GRID_SIZE_VARIABLE = '--grid-size';
+const GRID_BACKGROUND_COLOR_VARIABLE = '--grid-background-color';
+const INITIAL_GRID_SIZE = 16;
+const BLACK_BORDER_OUTLINE = '1px solid black';
 const slider = document.querySelector("#range");
 const gridCount = document.querySelector('#grid');
 const sketchCanvas = document.querySelector('#sketch');
@@ -12,13 +15,14 @@ let canvasColor = canvasButtonColor.value;
 let previousBackgroundColor = canvasColor;
 let isMouseDown = false;
 let isDrag = false;
+let root = document.documentElement;
 
-
+// Canvas
 sketchCanvas.onmouseover = function(event) {
   let targetStyle = event.target.style;
   previousBackgroundColor = targetStyle.backgroundColor;
   targetStyle.backgroundColor = sketchColor;
-  targetStyle.border = "1px solid black";
+  targetStyle.border = BLACK_BORDER_OUTLINE;
 };
 
 sketchCanvas.onmouseout = function(event) {
@@ -35,35 +39,47 @@ sketchCanvas.onmouseleave = () => {
 };
 
 sketchCanvas.onmousedown = function(event) {
+  event.preventDefault();
   isMouseDown = true;
   isDrag = true;
   event.target.style.backgroundColor = sketchColor;
 };
 
 sketchCanvas.onmouseup = () => isDrag = false;
+//
 
+// Slider
 slider.oninput = generateGrids;
-slider.onmouseup = function() { style.innerHTML = newGridSize(this.value) };
-slider.onkeyup = function() { style.innerHTML = newGridSize(this.value) };
- 
+slider.onmouseup = function() { setGridProperties(this.value); };
+slider.onkeyup = function() { setGridProperties(this.value); };
+//
+
+// Settings
+
+canvasButtonColor.onclick = function() { 
+  canvasColor = this.value;
+  sketchColor = canvasColor;
+}
+
 canvasButtonColor.oninput = function() { 
   canvasColor = this.value;
   sketchColor = canvasColor;
 }
 
+sketchButtonColor.onclick = function() { sketchColor = this.value; }
 sketchButtonColor.oninput = function() { sketchColor = this.value; }
 
-eraser.onclick = function() { sketchColor = this.value; }
-
+eraser.onclick = function() { sketchColor = "inherit"; }
 resetCanvas.onclick = buildCanvas;
+// 
 
 function generateGrids() {
-  const newGridSize = this.value;
+  const newGridCount = this.value;
   const oldGridAmount = (gridCount.dataset.grid) ** 2;
-  const newGridAmount = (newGridSize) ** 2;
+  const newGridAmount = (newGridCount) ** 2;
 
-  gridCount.textContent = `${newGridSize} X ${newGridSize}`;
-  gridCount.dataset.grid = newGridSize;
+  gridCount.textContent = `${newGridCount} X ${newGridCount}`;
+  gridCount.dataset.grid = newGridCount;
 
   let divAction = (oldGridAmount < newGridAmount) ? 
     (element) => element.appendChild(document.createElement('div')) :
@@ -71,29 +87,30 @@ function generateGrids() {
 
   const counter = Math.abs(newGridAmount - oldGridAmount);
 
-  style.innerHTML = '#sketch div { border: 1px solid black; width: ' + `${100/newGridSize}%` + ';}';
+  setGridProperties(newGridCount, BLACK_BORDER_OUTLINE);
 
   for (let i = 0; i < counter; i++) {
     divAction(sketchCanvas);
   }
 }
 
-function newGridSize(gridSize) {
-  return '#sketch div { width: ' + `${100/gridSize}%` + ';}';
+function setGridProperties(gridCount = 16, color = "") {
+  root.style.setProperty(GRID_SIZE_VARIABLE, `calc(100%/${gridCount})`);
+  root.style.setProperty(GRID_BACKGROUND_COLOR_VARIABLE, color);
 }
- 
+
 function buildCanvas() {
-  const counter = (initialGrid) ** 2;
-  gridCount.textContent = `${initialGrid} X ${initialGrid}`;
-  gridCount.dataset.grid = initialGrid;
-  slider.value = initialGrid;
-  style.innerHTML = newGridSize(initialGrid);
+  const counter = (INITIAL_GRID_SIZE) ** 2;
+  gridCount.textContent = `${INITIAL_GRID_SIZE} X ${INITIAL_GRID_SIZE}`;
+  gridCount.dataset.grid = INITIAL_GRID_SIZE;
+  slider.value = INITIAL_GRID_SIZE;
+  setGridProperties(INITIAL_GRID_SIZE);
 
   const initialCanvasDivs = [];
   for (let i = 0; i < counter; i++) {
     initialCanvasDivs[i] = document.createElement('div');
   }
   sketchCanvas.replaceChildren(...initialCanvasDivs)
-};
+}
 
 buildCanvas()
