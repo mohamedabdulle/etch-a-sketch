@@ -10,7 +10,7 @@ Etch-a-sketch is a tool that will allow you to sketch on a canvas.
 To start sketching, move your cursor over the canvas and click and drag.
 
 <h3>The sketching tool comes with some settings to enhance the sketching experience:</h3>    
-<img align="left"  style="margin-right:30px; margin-top:10px;" src="docs/img/settings.jpg">
+<img align="left"  style="margin-right:50px; margin-top:10px;" src="docs/img/settings.jpg">
 
 * Etching - Color of line when sketching. Clicking the button will automatically change the color to it as well.
 * Canvas - Color of canvas.
@@ -21,7 +21,7 @@ To start sketching, move your cursor over the canvas and click and drag.
 <br>
 
 <h3>The sketching tool comes with some settings to enhance the sketching experience:</h3>    
-<img align="left"  style="margin-right:30px; margin-top:10px;" src="docs/img/canvas.jpg">
+<img align="left"  style="margin-right:50px; margin-top:10px;" src="docs/img/canvas.jpg">
 
 * Dragging the blue slider will adjust the canvas grid count.
 * The black grid border will only show when dragging the slider. It gives a preview of the grid layout.
