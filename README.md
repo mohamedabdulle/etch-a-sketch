@@ -20,7 +20,6 @@ To start sketching, move your cursor over the canvas and click and drag.
 
 <br clear="left"/>
 <br>
-<br>
 
 <h3>The sketching tool comes with some settings to enhance the sketching experience:</h3>    
 <img align="left"  style="margin-right:30px; margin-top:10px;" src="docs/img/canvas.jpg">
