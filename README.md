@@ -1,9 +1,14 @@
-# etch-a-sketch
+# Etch-a-Sketch
 Etch-a-sketch is a tool that will allow you to sketch on a canvas.  
 <br>
 <p align="center">
   <img  src="docs/img/sketch.jpg">
 </p>
+
+## Links
+- [Click here to see the Etch-a-Sketch tool](https://mohamedabdulle.github.io/etch-a-sketch/)
+
+- [Link to the assignment details](https://www.theodinproject.com/lessons/foundations-etch-a-sketch)
 
 ## Description
 
